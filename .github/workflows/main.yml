@@ -26,7 +26,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
          node-version: 16
-         cache: "npm"
 
       - name: Install node libraries
         run: npm install 
@@ -40,4 +39,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
          name: Myreport
-         path: "**/report"       
+         path: report       
