@@ -4,9 +4,9 @@
   "description": "Teste com cucumber e selenium",
   "main": "index.js",
   "scripts": {
-    "start": "cucumber-js --format progress-bar --format json:./json/cucumber-report.json",
+    "start": "cucumber-js --format json:./json/cucumber-report.json",
     "post": "node report_creator.js",
-    "test": "npm run start & npm run post"
+    "test": "npm run start && npm run post"
   },
   "author": "",
   "license": "ISC",
