@@ -1,53 +1,37 @@
-#DO THE TEST EACH 6 HOURS FROM MONDAY TO FRIDAY
-name: Selenium tests with Github Actions
-on: 
-#   schedule:
-#   - cron: "0 */6 * * 1-5"  # Check with https://crontab.guru/
-  
-  push:
-    branches:
-     - 'main'
-      
+name: run-selenium
+on:
+  # Triggers the workflow on push or pull request events but only for the develop branch
+#   push:
+#     branches: [ main ]
+    
   workflow_dispatch:
-
+  
 jobs:
-
-  #test_schedule:
-  checkout-and-test:
+  Selenium-run:
     runs-on: ubuntu-latest
+        
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
 
       - name: Check out repository code
         uses: actions/checkout@v2
+        timeout-minutes: 10
         
-      - uses: nanasess/setup-chromedriver@v2
-        with:
-    # Optional: do not specify to match Chrome's version  
-         chromedriver-version: '114.0.5735.16'
-         
-      - run: |
-          export DISPLAY=:99
-          chromedriver --url-base=/wd/hub &
-          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
-      
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 16
-                  
+
       - name: Install libraries
-        run: npm install --save-dev @cucumber/pretty-formatter @cucumber/cucumber selenium-webdriver assert chromedriver   
+        run: npm install 
         timeout-minutes: 10
         
       - name: Run Tests
         continue-on-error: true
-        run:  npm test       
-          
-       
+        run:  npm test   
+        
       - name: Generate report
         uses: actions/upload-artifact@v2
         with:
          name: Myreport.html
          path: "**/report"       
-       
