@@ -1,0 +1,68 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "searchtest;search-any",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Search any",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I visit publicazo homepage",
+            "match": {
+              "location": "features\\step-definitions\\TC1.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5646514899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I search for teste",
+            "match": {
+              "location": "features\\step-definitions\\TC1.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1107453000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should see the results",
+            "match": {
+              "location": "features\\step-definitions\\TC1.js:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17824299
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Regression",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "searchtest",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "SearchTest",
+    "tags": [],
+    "uri": "features\\TC1.feature"
+  }
+]

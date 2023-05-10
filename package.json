@@ -1,0 +1,26 @@
+{
+  "name": "teste",
+  "version": "1.0.0",
+  "description": "Teste com cucumber e selenium",
+  "main": "index.js",
+  "scripts": {
+    "start": "cucumber-js --format progress-bar --format json:./json/cucumber-report.json",
+    "post": "node report_creator.js",
+    "test": "npm run start && npm run post"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^8.11.1",
+    "@cucumber/pretty-formatter": "^1.0.0"
+  },
+  "dependencies": {
+    "assert": "^2.0.0",
+    "chrome": "^0.1.0",
+    "chromedriver": "^108.0.0",
+    "dayjs": "^1.11.7",
+    "geckodriver": "^3.2.0",
+    "multiple-cucumber-html-reporter": "^3.4.0",
+    "selenium-webdriver": "^4.9.0"
+  }
+}
