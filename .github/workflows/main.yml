@@ -15,15 +15,18 @@ jobs:
 
       - name: Check out repository code
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-           node-version: 16
-           cache: 'npm'
+      
       - uses: nanasess/setup-chromedriver@v2
         with:
         # Optional: do not specify to match Chrome's version
           chromedriver-version: '112.0.5615.49'
         timeout-minutes: 10     
+        
+      - name: Node Setup
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
 
       - name: Install node libraries
         run: npm install 
