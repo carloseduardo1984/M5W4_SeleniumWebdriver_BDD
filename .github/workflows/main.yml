@@ -19,13 +19,21 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
 
       - name: Check out repository code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - uses: nanasess/setup-chromedriver@v2
         with:
-        # Optional: do not specify to match Chrome's version
+    # Optional: do not specify to match Chrome's version  
          chromedriver-version: '112.0.5615.165'
-        timeout-minutes: 10
-
+      - run: |
+         export DISPLAY=:99
+         chromedriver --url-base=/wd/hub &
+         sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+      
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+                  
       - name: Install libraries
         run: npm install --save-dev @cucumber/pretty-formatter @cucumber/cucumber selenium-webdriver assert chromedriver   
         timeout-minutes: 10
