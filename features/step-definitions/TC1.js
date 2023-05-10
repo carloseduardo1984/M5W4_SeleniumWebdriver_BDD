@@ -39,7 +39,7 @@ When('I search for teste', async () => {
 Then('I should see the results', async () => {
     
     await driver.findElement(By.css(".col-md-4:nth-child(3) .panel-body")).click()
-    assert(await driver.findElement(By.linkText("Aulas de Teste de Software")).getText() == "Aulas de Teste de Software")
+    assert(await driver.findElement(By.linkText("Aulas de Teste de Software1")).getText() == "Aulas de Teste de Software")
     await driver.close();
     //===============
 
