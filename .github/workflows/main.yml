@@ -32,11 +32,11 @@ jobs:
         timeout-minutes: 10
         
       - name: Run Tests
-        continue-on-error: true
+#         continue-on-error: true
         run:  npm run test   
         
-      - name: Generate report
-        uses: actions/upload-artifact@v3
-        with:
-         name: Myreport
-         path: report       
+#       - name: Generate report
+#         uses: actions/upload-artifact@v3
+#         with:
+#          name: Myreport
+#          path: report       
