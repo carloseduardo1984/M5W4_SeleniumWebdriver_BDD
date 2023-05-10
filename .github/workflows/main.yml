@@ -32,7 +32,7 @@ jobs:
         
       - name: Run Tests
         continue-on-error: true
-        run:  npm test   
+        run:  npm run test   
         
       - name: Generate report
         uses: actions/upload-artifact@v2
