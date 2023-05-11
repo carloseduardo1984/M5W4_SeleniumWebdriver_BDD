@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cucumber-js --format json:./json/cucumber-report.json",
     "post": "node report_creator.js",
-    "test": "npm run start && npm run post"
+    "test": "npm run start & npm run post"
   },
   "author": "",
   "license": "ISC",
